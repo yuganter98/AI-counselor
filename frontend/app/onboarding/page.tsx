@@ -151,19 +151,19 @@ export default function OnboardingPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                     {step === 1 && (
                         <>
-                            <FormInput label="Major / Stream" value={academic.major} onChange={v => setAcademic({ ...academic, major: v })} placeholder="e.g. Computer Science" />
+                            <FormInput label="Major / Stream" value={academic.major} onChange={(v: string) => setAcademic({ ...academic, major: v })} placeholder="e.g. Computer Science" />
                             <div className="grid grid-cols-2 gap-4">
-                                <FormSelect label="Education Level" value={academic.education_level} onChange={v => setAcademic({ ...academic, education_level: v })} options={['Undergraduate', 'Postgraduate', 'High School']} />
-                                <FormInput label="Graduation Year" type="number" value={academic.graduation_year} onChange={v => setAcademic({ ...academic, graduation_year: parseInt(v) })} />
+                                <FormSelect label="Education Level" value={academic.education_level} onChange={(v: string) => setAcademic({ ...academic, education_level: v })} options={['Undergraduate', 'Postgraduate', 'High School']} />
+                                <FormInput label="Graduation Year" type="number" value={academic.graduation_year} onChange={(v: string) => setAcademic({ ...academic, graduation_year: parseInt(v) })} />
                             </div>
-                            <FormInput label="CGPA / Percentage" type="number" step="0.1" value={academic.gpa} onChange={v => setAcademic({ ...academic, gpa: parseFloat(v) })} placeholder="e.g. 3.8 or 85" />
+                            <FormInput label="CGPA / Percentage" type="number" step="0.1" value={academic.gpa} onChange={(v: string) => setAcademic({ ...academic, gpa: parseFloat(v) })} placeholder="e.g. 3.8 or 85" />
                         </>
                     )}
 
                     {step === 2 && (
                         <>
-                            <FormInput label="Target Degree" value={goals.target_degree} onChange={v => setGoals({ ...goals, target_degree: v })} placeholder="e.g. MS in Data Science" />
-                            <FormInput label="Field of Study" value={goals.field_of_study} onChange={v => setGoals({ ...goals, field_of_study: v })} placeholder="e.g. Artificial Intelligence" />
+                            <FormInput label="Target Degree" value={goals.target_degree} onChange={(v: string) => setGoals({ ...goals, target_degree: v })} placeholder="e.g. MS in Data Science" />
+                            <FormInput label="Field of Study" value={goals.field_of_study} onChange={(v: string) => setGoals({ ...goals, field_of_study: v })} placeholder="e.g. Artificial Intelligence" />
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Preferred Countries</label>
                                 <input
