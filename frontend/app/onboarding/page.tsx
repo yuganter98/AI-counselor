@@ -179,18 +179,18 @@ export default function OnboardingPage() {
 
                     {step === 3 && (
                         <>
-                            <FormInput label="Max Budget (USD / Year)" type="number" value={budget.budget_max} onChange={v => setBudget({ ...budget, budget_max: parseInt(v) })} placeholder="e.g. 40000" />
-                            <FormSelect label="Funding Type" value={budget.funding_type} onChange={v => setBudget({ ...budget, funding_type: v })} options={['Self-Funded', 'Loan', 'Scholarship Required']} />
+                            <FormInput label="Max Budget (USD / Year)" type="number" value={budget.budget_max} onChange={(v: string) => setBudget({ ...budget, budget_max: parseInt(v) })} placeholder="e.g. 40000" />
+                            <FormSelect label="Funding Type" value={budget.funding_type} onChange={(v: string) => setBudget({ ...budget, funding_type: v })} options={['Self-Funded', 'Loan', 'Scholarship Required']} />
                         </>
                     )}
 
                     {step === 4 && (
                         <>
                             <div className="grid grid-cols-2 gap-6">
-                                <FormSelect label="IELTS / TOEFL" value={readiness.ielts_status} onChange={v => setReadiness({ ...readiness, ielts_status: v })} options={['Not Taken', 'Prepared', 'Taken']} />
-                                <FormSelect label="GRE / GMAT" value={readiness.gre_status} onChange={v => setReadiness({ ...readiness, gre_status: v })} options={['Not Taken', 'Prepared', 'Taken']} />
+                                <FormSelect label="IELTS / TOEFL" value={readiness.ielts_status} onChange={(v: string) => setReadiness({ ...readiness, ielts_status: v })} options={['Not Taken', 'Prepared', 'Taken']} />
+                                <FormSelect label="GRE / GMAT" value={readiness.gre_status} onChange={(v: string) => setReadiness({ ...readiness, gre_status: v })} options={['Not Taken', 'Prepared', 'Taken']} />
                             </div>
-                            <FormSelect label="SOP Status" value={readiness.sop_status} onChange={v => setReadiness({ ...readiness, sop_status: v })} options={['Not Started', 'Drafting', 'Reviewed', 'Finalized']} />
+                            <FormSelect label="SOP Status" value={readiness.sop_status} onChange={(v: string) => setReadiness({ ...readiness, sop_status: v })} options={['Not Started', 'Drafting', 'Reviewed', 'Finalized']} />
                         </>
                     )}
 
